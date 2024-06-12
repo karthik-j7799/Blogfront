@@ -44,26 +44,28 @@ function EditPost() {
             })
             },[])
     
-    const Submit = (e) => {
-        console.log(values);
-        e.preventDefault();
-            axios
-            .post(`http://localhost:3000/editPost/${id}`, values)
-            .then((res) => {
-            if (res.data.status == 500) {
-                    console.log(res);
-                    alert(res.data.msg);
-            }
-            else {
-                    console.log("Submitted", res);
-                    alert("Edited")
-                    window.location.reload(false);
-                }
-            })
-            .catch((err) => {
-                    console.log("Error", err);
-                });
-        };
+            const Submit = (e) => {
+                e.preventDefault();
+                const formData = new FormData();
+                formData.append('title', values.title);
+                formData.append('content', values.content);
+                formData.append('image', values.image);
+            
+                axios.post(`http://localhost:3000/editPost/${id}`, formData)
+                    .then((res) => {
+                        if (res.data.status === 500) {
+                            console.log(res);
+                            alert(res.data.msg);
+                        } else {
+                            console.log("Submitted", res);
+                            alert("Edited");
+                            window.location.reload(false); // Reload the page after successful edit
+                        }
+                    })
+                    .catch((err) => {
+                        console.log("Error", err);
+                    });
+            };
 
         const deletefn = (id) => {
             // setValues(prevArray => prevArray.filter(item => item._id !== id));

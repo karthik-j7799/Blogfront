@@ -47,6 +47,18 @@ body {
 
 }
 
+
+.content-box {
+  background-color: rgb(255, 251, 251);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.glowing-text {
+  color: #220303;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
 #emailHelp{
   color: rgb(195, 202, 205);
 }
@@ -103,6 +115,7 @@ input[type=number] {
 
 .Userlogin{
   background-color: white;
+  
 }
 
 header{
@@ -131,6 +144,12 @@ footer{
 .row{
   position: absolute;
   padding-left: 5%;
+  margin-top: 10%;
+}
+.rows{
+  position: absolute;
+  padding: 5%;
+  
 }
 
 .post{
@@ -216,4 +235,41 @@ footer{
   
   
 
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .row{
+    position: absolute;
+    padding-left: 5%;
+    margin-top: 20%;
+  }
+  .rows{
+    position: absolute;
+    padding: 10%;
+    
+  }
+}
+@media screen and (min-width: 250px) and (max-width: 360px) {
+  .row{
+    position: absolute;
+    padding-left: 5%;
+    margin-top: 45%;
+  }
+  .rows{
+    position: absolute;
+    padding: 20%;
+    
+  }
+}
+@media screen and (min-width: 365px) and (max-width: 480px) {
+  .row{
+    position: absolute;
+    padding-left: 5%;
+    margin-top: 45%;
+  }
+  .rows{
+    position: absolute;
+    padding: 20%;
+    
+  }
 }
